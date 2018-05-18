@@ -27,6 +27,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let redBox = ColorBox(width: 120, height: 100, color: "red")
+        let theBox = WhiteBox()
+        print((redBox.width, redBox.height, redBox.color))
+        print((theBox.width, theBox.height, theBox.color))
     }
 
     override func didReceiveMemoryWarning() {
