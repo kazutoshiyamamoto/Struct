@@ -28,10 +28,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let redBox = ColorBox(width: 120, height: 100, color: "red")
-        let theBox = WhiteBox()
-        print((redBox.width, redBox.height, redBox.color))
-        print((theBox.width, theBox.height, theBox.color))
+        // 構造体を作って変数に入れる
+        var redBox = ColorBox(width: 100, height: 100, color: "red")
+        print("幅\(redBox.width), 高さ\(redBox.height), 色\(redBox.color)")
+        
+        // プロパティの値を変更する
+        redBox.width = 90
+        redBox.color = "blue"
+        print("幅\(redBox.width), 高さ\(redBox.height), 色\(redBox.color)")
     }
 
     override func didReceiveMemoryWarning() {
