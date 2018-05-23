@@ -14,13 +14,19 @@ struct Ball {
     var radius: Double = 10.0
 }
 
-
-
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        Ball.sozai = "木"
+        let ball1 = Ball(radius: 15)
+        let ball2 = Ball()
+        print(ball1.radius)
+        print(ball2.radius)
+        print(Ball.madein)
+        print(Ball.sozai)
         
     }
 
