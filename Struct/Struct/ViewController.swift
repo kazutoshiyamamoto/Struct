@@ -32,9 +32,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
-        
-        
+        let box1 = Box(width: 120, height: 80)
+        let box2 = Box(width: 150, height: 120)
+        print(box1)
+        print(box2)
     }
     
     override func didReceiveMemoryWarning() {
