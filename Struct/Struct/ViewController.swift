@@ -8,34 +8,35 @@
 
 import UIKit
 
-struct Box {
-    let width: Int
-    let height: Int
-    let size: String
-    
-    // イニシャライザ
-    init(width: Int, height: Int) {
-        self.width = width
-        self.height = height
-        // sizeを設定
-        if (width + height) < 250 {
-            size = "M"
-        } else {
-            size = "L"
-        }
-    }
-}
 
 class ViewController: UIViewController {
+    
+    // 構造体
+    struct Goods {
+        let tanka: Int
+        let kosu: Int
+        // 定価
+        var price: Int {
+            return tanka * kosu
+        }
+        // 売値
+        func sellprice(nebiki: Int = 0) -> Int {
+            // 値引きする
+            return price - nebiki * kosu
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let box1 = Box(width: 120, height: 80)
-        let box2 = Box(width: 150, height: 120)
-        print(box1)
-        print(box2)
+        // 4個入りの商品を作る
+        let myGoods = Goods(tanka: 700, kosu: 4)
+        // 販売価格（1個10円引き）
+        let selling_price = myGoods.sellprice(nebiki: 10)
+        // 確認
+        print("1個\(myGoods.tanka)円、\(myGoods.kosu)個入り、定価\(myGoods.price)円")
+        print("販売価格\(selling_price)円")
     }
     
     override func didReceiveMemoryWarning() {
