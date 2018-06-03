@@ -37,6 +37,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // 両端の2点
+        let point1 = Point(x: 100, y: 100)
+        let point2 = Point(x: 300, y: 200)
+        // 2点を結ぶ直線
+        var theLine = Line(p1: point1, p2: point2)
+        // 座標の確認
+        print("移動前のp1\(theLine.p1)")
+        print("移動前のp2\(theLine.p2)")
+        print("-----------")
+        
+        // 平行移動する
+        theLine.move(h: 50, v: 60)
+        // 座標の確認
+        print("移動後のp1\(theLine.p1)")
+        print("移動後のp2\(theLine.p2)")
     }
     
     override func didReceiveMemoryWarning() {
