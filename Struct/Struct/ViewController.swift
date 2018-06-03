@@ -8,35 +8,35 @@
 
 import UIKit
 
+struct Line {
+    // 両端の座標
+    var p1: Point
+    var p2: Point
+    
+    // 両端を動かして線を並行移動する
+    mutating func move(h: Double, v: Double) {
+        p1.x += h
+        p1.y += v
+        p2.x += h
+        p2.y += v
+    }
+}
+
+// 点の構造体
+struct Point {
+    var x: Double
+    var y: Double
+}
+
 
 class ViewController: UIViewController {
     
-    // 構造体
-    struct Goods {
-        let tanka: Int
-        let kosu: Int
-        // 定価
-        var price: Int {
-            return tanka * kosu
-        }
-        // 売値
-        func sellprice(nebiki: Int = 0) -> Int {
-            // 値引きする
-            return price - nebiki * kosu
-        }
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // 4個入りの商品を作る
-        let myGoods = Goods(tanka: 700, kosu: 4)
-        // 販売価格（1個10円引き）
-        let selling_price = myGoods.sellprice(nebiki: 10)
-        // 確認
-        print("1個\(myGoods.tanka)円、\(myGoods.kosu)個入り、定価\(myGoods.price)円")
-        print("販売価格\(selling_price)円")
     }
     
     override func didReceiveMemoryWarning() {
