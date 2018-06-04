@@ -41,8 +41,25 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-    
+    // タイガージュースの在庫を作る
+        var shoes = Stock(name: "Tiger")
+        shoes["green", 24.5] = 3
+        shoes["green", 25.0] = 5
         
+        // 在庫を更新する
+        shoes["green", 24.5] -= 2
+        shoes["green", 25.0] += 1
+        shoes["red", 26.0] = 5
+        
+        // 在庫を確認する
+        print(shoes.name)
+        print(shoes["green", 24.5])
+        print(shoes["green", 25.0])
+        print(shoes["red", 26.0])
+        
+        // 在庫データがないもの
+        print(shoes["red", 25.5])
+        print(shoes["white", 25.0])
     }
     
     override func didReceiveMemoryWarning() {
