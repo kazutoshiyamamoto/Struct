@@ -14,7 +14,15 @@ protocol Monster {
     mutating func updateHP(pt: Int)
 }
 
-
+struct Bokemon: Monster {
+    // プロパティ（プロトコル準拠）
+    private(set) var monsterName: String
+    var hp: Int
+    // hpを変更するメソッド
+    mutating func updateHP(pt: Int) {
+        hp += pt
+    }
+}
 
 class ViewController: UIViewController {
     
